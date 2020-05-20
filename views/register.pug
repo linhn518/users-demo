@@ -1,0 +1,21 @@
+extends bootstrap
+
+block content
+    h1 Create new acount
+    if errors
+        each error in errors
+            div.alert.alert-danger= error
+    
+    form(action="/auth/register", method="post")
+        div(class="form-group")
+        label(for= 'Email') Email
+        input#Email(type="text", name='email', class="form-control", value = values ? values.email : '')
+        div(class="form-group")
+        label(for= 'Password') Password
+        input#Password(type="password", name ='password', class="form-control", value = values ? values.password : '')
+        
+        button(class="btn btn-primary mt-3") Register
+
+    div
+        span Do you had an account?
+        a(href= '/auth/login')  Login  

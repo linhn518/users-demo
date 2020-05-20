@@ -1,0 +1,26 @@
+extends bootstrap
+
+block content
+  p.ml-3.mt-3
+    - var url = 'http://google.com'
+    a(href = url ) Google
+  p.ml-3
+    a(href ='/library/create') Create
+  d-flex.align-items-center  
+    form.ml-auto(action='/library/search', method='GET', class='d-flex')
+        input(type='text', name='q', class="form-control ml-5")
+        button.btn.btn-primary.ml-2 Search
+  table.table
+      tr 
+        th(scope="col") Name
+        th(scope="col") Age
+        th(scope="col") Phone
+        th View
+      each user in users
+        tr
+          td= user.name
+          td= user.age
+          td= user.phone
+          td
+            a(href= '/library/'+ user.id) View
+        

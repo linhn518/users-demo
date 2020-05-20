@@ -1,0 +1,19 @@
+html
+    head
+        link( rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css")
+    body
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+            a.navbar-brand(href='#') Linhn518
+            #navbarNav.collapse.navbar-collapse
+                ul.navbar-nav
+                    li.nav-item.active
+                        a.nav-link(href='/library', class="text-justify") Home Page
+                        span.sr-only (current)
+                    li.nav-item
+                        a.nav-link(href='/library') Users
+                    li.nav-item
+                        a.nav-link(href='/library/create') Create            
+            if account
+                p= account.email
+        .container.pt-5
+           block content

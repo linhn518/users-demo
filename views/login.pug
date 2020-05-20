@@ -1,0 +1,17 @@
+extends bootstrap
+
+block content
+    h1 Login 
+
+    if errors
+        each error in errors
+            div(style='color: red')= error
+    form(action="/auth/login", method="post")
+        div(class="form-group")
+        label(for= 'Email') Email
+        input#Email(type="text", name='email', class="form-control", value = values ? values.email : '')
+        div(class="form-group")
+        label(for= 'Password') Password
+        input#Password(type="password", name ='password', class="form-control", value = values ? values.password : '')
+        
+        button(class="btn btn-primary mt-3") Login

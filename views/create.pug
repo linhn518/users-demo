@@ -1,0 +1,20 @@
+extends bootstrap
+
+block content
+    h1 Create new acount
+
+    if errors
+      each error in errors
+        div(style='color: red')= error
+    form(action="/library/create", method="post")
+        div(class="form-group")
+        label(for= 'Name') Name
+        input#Name(type="text",name='name', class="form-control", value = values ? values.name : '' )
+        div(class="form-group")
+        label(for= 'Age') Age
+        input#Age(type="text",name='age', class="form-control", valu = values ? values.age : '')
+        div(class="form-group")
+        label(for= 'Phone') Phone
+        input#Phone(type="text",name='phone', class="form-control", valu = values ? values.phones : '')
+
+        button(class="btn btn-primary mt-3") Create
